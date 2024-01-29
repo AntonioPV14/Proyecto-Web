@@ -45,9 +45,11 @@
                 <input type="password" class="input-field" placeholder="Contraseña">
                 <i class="bx bx-lock-alt"></i>
             </div>
+            <form action="../content/index.php" method="post">
             <div class="input-box">
                 <input type="submit"  class="submit" value="Siguiente">
             </div>
+            </form>
             <div class="two-col">
                 <div class="one">
                     <input type="checkbox" id="login-check">
@@ -83,9 +85,11 @@
                 <input type="password" class="input-field" placeholder="Contraseña">
                 <i class="bx bx-lock-alt"></i>
             </div>
+            <form action="../content/recuperar.php" method="post">
             <div class="input-box">
                 <input type="submit" class="submit" value="Registrar">
             </div>
+            </form>
             <div class="two-col">
                 <div class="one">
                     <input type="checkbox" id="register-check">
