@@ -45,7 +45,7 @@
                 <input type="password" class="input-field" placeholder="Contraseña">
                 <i class="bx bx-lock-alt"></i>
             </div>
-            <form action="../content/index.php" method="post">
+            <form action="../dashboard/index.php" method="post">
             <div class="input-box">
                 <input type="submit"  class="submit" value="Siguiente">
             </div>
