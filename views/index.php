@@ -1,3 +1,49 @@
+<!--Conexión con el registro-->
+<?php
+require '../stages/database.php';
+
+$message = '';
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // Verifica si se enviaron los campos necesarios desde el formulario de registro
+    if (empty($_POST['nombre']) || empty($_POST['apellido']) || empty($_POST['email_2']) || empty($_POST['password_2'])) {
+        $message = 'Por favor, complete todos los campos.';
+    } else {
+        $nombre = $_POST['nombre'];
+        $apellido = $_POST['apellido'];
+        $email = $_POST['email_2'];
+        $password = password_hash($_POST['password_2'], PASSWORD_BCRYPT);
+
+        // Verifica si el correo electrónico ya existe en la base de datos
+        $stmt = $conn->prepare("SELECT * FROM user WHERE email = :email");
+        $stmt->bindParam(':email', $email);
+        $stmt->execute();
+        $user = $stmt->fetch();
+
+        if ($user) {
+            $message = 'El correo electrónico ya está registrado.';
+        } else {
+            // Realiza la inserción en la base de datos usando los datos proporcionados
+            $sql = "INSERT INTO user (nombre, apellido, email, password) VALUES (:nombre, :apellido, :email, :password)";
+            $stmt = $conn->prepare($sql);
+            $stmt->bindParam(':nombre', $nombre);
+            $stmt->bindParam(':apellido', $apellido);
+            $stmt->bindParam(':email', $email);
+            $stmt->bindParam(':password', $password);
+
+            // Ejecuta la consulta preparada
+            if ($stmt->execute()) {
+                $message = 'Usuario creado satisfactoriamente';
+            } else {
+                $message = 'Error en la base de datos: ' . $stmt->errorInfo()[2];
+            }
+        }
+    }
+}
+?>
+<!DOCTYPE html>
+<html lang="en">
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -33,19 +79,20 @@
     <div class="form-box">
         <!------------------- Formulario de Iniciar sesión -------------------------->
         <div class="login-container" id="login">
+            <form action="../dashboard/index.php" method="post">
             <div class="top">
                 <span>¿No tienes una cuenta? <a href="#" onclick="register()">Regístrate</a></span>
                 <header>Iniciar sesión</header>
             </div>
             <div class="input-box">
-                <input type="text" class="input-field" placeholder="Usuario o Correo electronico">
+                <input type="text" class="input-field" name="email_1" placeholder="Usuario o Correo electronico">
                 <i class="bx bx-user"></i>
             </div>
             <div class="input-box">
-                <input type="password" class="input-field" placeholder="Contraseña">
+                <input type="password" class="input-field" name = "password_1"placeholder="Contraseña">
                 <i class="bx bx-lock-alt"></i>
             </div>
-            <form action="../dashboard/index.php" method="post">
+            
             <div class="input-box">
                 <input type="submit"  class="submit" value="Siguiente">
             </div>
@@ -62,46 +109,52 @@
         </div>
 
         <!------------------- Formulario de Registro -------------------------->
-        <div class="register-container" id="register">
-            <div class="top">
-                <span>¿Tienes una cuenta? <a href="#" onclick="login()">Iniciar sesión</a></span>
-                <header>Regístrate</header>
-            </div>
-            <div class="two-forms">
-                <div class="input-box">
-                    <input type="text" class="input-field" placeholder="Nombre">
-                    <i class="bx bx-user"></i>
-                </div>
-                <div class="input-box">
-                    <input type="text" class="input-field" placeholder="Apellido">
-                    <i class="bx bx-user"></i>
-                </div>
+<div class="register-container" id="register">
+    <?php
+        if (!empty($message)):  ?>
+         <script>
+            alert("<?php echo $message; ?>");
+         </script>
+    <?php endif; ?>
+    <div class="top">
+        <span>¿Tienes una cuenta? <a href="#" onclick="login()">Iniciar sesión</a></span>
+        <header>Regístrate</header>
+    </div>
+    <form action="index.php" method="post">
+        <div class="two-forms">
+            <div class="input-box">
+                <input type="text" class="input-field" name="nombre" placeholder="Nombre">
+                <i class="bx bx-user"></i>
             </div>
             <div class="input-box">
-                <input type="text" class="input-field" placeholder="Correo">
-                <i class="bx bx-envelope"></i>
+                <input type="text" class="input-field" name="apellido" placeholder="Apellido">
+                <i class="bx bx-user"></i>
             </div>
-            <div class="input-box">
-                <input type="password" class="input-field" placeholder="Contraseña">
-                <i class="bx bx-lock-alt"></i>
-            </div>
-            <form action="../content/recuperar.php" method="post">
-            <div class="input-box">
-                <input type="submit" class="submit" value="Registrar">
-            </div>
-            </form>
-            <div class="two-col">
-                <div class="one">
-                    <input type="checkbox" id="register-check">
-                    <label for="register-check"> Recuerdame</label>
-                </div>
-                <div class="two">
-                    <label id="Termino"><a href="#">Terminos y condiciones</a></label>
-                </div>
-            </div>
+        </div>
+        <div class="input-box">
+            <input type="text" class="input-field" name="email_2" placeholder="Correo">
+            <i class="bx bx-envelope"></i>
+        </div>
+        <div class="input-box">
+            <input type="password" class="input-field" name="password_2" placeholder="Contraseña">
+            <i class="bx bx-lock-alt"></i>
+        </div>
+        <div class="input-box">
+            <input type="submit" class="submit" value="Registrar">
+        </div>
+    </form>
+    <div class="two-col">
+        <div class="one">
+            <input type="checkbox" id="register-check">
+            <label for="register-check"> Recuérdame</label>
+        </div>
+        <div class="two">
+            <label id="Termino"><a href="#">Términos y condiciones</a></label>
         </div>
     </div>
 </div>
+
+
 <!--js-->   
 <script>
    

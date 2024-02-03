@@ -30,7 +30,7 @@
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" id="Inicio" href="index.html">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" id="Inicio" href="index.php">
 
                 <div class="sidebar-brand-text mx-3">EduWeb</div>
             </a>
