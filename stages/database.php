@@ -6,10 +6,10 @@ $database = 'proyecto';
 
 try {
     $conn = new PDO("mysql:host=$server;dbname=$database", $username, $password);
-    // Configura PDO para mostrar errores
+    // PDO para mostrar errores
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    // Verifica la conexión
+    // Verificar la conexión
     if (!$conn) {
         die("Conexión a la base de datos fallida");
     }

@@ -10,7 +10,7 @@
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; Tu sitio web 2024</span>
+                        <span>Copyright &copy; EduWeb 2024</span>
                     </div>
                 </div>
             </footer>
