@@ -1,5 +1,7 @@
 <?php
 session_start();
+
+
 require '../stages/database.php';
 
 if (isset($_POST['email_1']) && isset($_POST['password_1'])) {

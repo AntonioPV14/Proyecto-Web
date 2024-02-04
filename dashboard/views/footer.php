@@ -27,7 +27,7 @@
         <i class="fas fa-angle-up"></i>
     </a>
 
-    <!-- Logout Modal-->
+    <!-- Logout Modal-->\
     <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
         <div class="modal-dialog" role="document">
@@ -41,7 +41,9 @@
                 <div class="modal-body">Seleccione "Cerrar sesión" a continuación si está listo para finalizar su sesión actual.</div>
                 <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
-                    <a class="btn btn-primary" href="../views/index.php">Cerrar sesión</a>
+                    <form method="post" action="functions.php">
+                        <input type="submit" value="Cerrar sesión" class="btn btn-primary" formaction="../views/index.php" formmethod="post" formaction="../views/index.php">
+                    </form>
                 </div>
             </div>
         </div>

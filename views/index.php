@@ -1,5 +1,6 @@
 <?php include '../stages/singup.php'; // Ruta Para registrar usuario?>
 <?php include '../stages/login.php'; // Ruta Para registrar usuario?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
