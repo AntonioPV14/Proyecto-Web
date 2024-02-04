@@ -16,7 +16,7 @@ if (isset($_POST['email_1']) && isset($_POST['password_1'])) {
         $user = $stmt->fetch(PDO::FETCH_ASSOC);
         if (password_verify($password, $user['password'])) {
             $_SESSION['usuario_id'] = $user['id_usuario'];
-            header('Location: ../dashboard/index.php');
+            header('Location: ../dashboard/menu/index.php');
         } else {
             $message = "Contraseña incorrecta. Vuelve a intentarlo o selecciona '¿Has olvidado tu contraseña?' para cambiarla.";
         }
