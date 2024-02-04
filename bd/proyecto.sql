@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 29-01-2024 a las 12:33:17
+-- Tiempo de generación: 04-02-2024 a las 17:15:22
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -31,7 +31,7 @@ CREATE TABLE `alumnos` (
   `idAlumno` int(11) NOT NULL,
   `nombre` varchar(30) NOT NULL,
   `apellido` varchar(30) NOT NULL,
-  `fechaNacimiento` datetime NOT NULL,
+  `fechaNacimiento` date NOT NULL,
   `telefono` varchar(15) NOT NULL,
   `ultimaModificacion` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -192,13 +192,19 @@ CREATE TABLE `periodo` (
 --
 
 CREATE TABLE `user` (
-  `idUser` int(11) NOT NULL,
-  `nombre` varchar(20) NOT NULL,
-  `apellido` varchar(20) NOT NULL,
-  `usuario` varchar(20) NOT NULL,
+  `id_usuario` int(11) NOT NULL,
+  `nombre` varchar(50) NOT NULL,
+  `apellido` varchar(50) NOT NULL,
   `email` varchar(50) NOT NULL,
-  `password` varchar(20) NOT NULL
+  `password` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `user`
+--
+
+INSERT INTO `user` (`id_usuario`, `nombre`, `apellido`, `email`, `password`) VALUES
+(1, 'antonio', 'perozo', 'antonioperozo.v2017@gmail.com', '$2y$10$ekj4gZcT6R4FrPhwcCQiguw0iVQ3XbSqcgF.VyPa419YqcgUFmNmq');
 
 --
 -- Índices para tablas volcadas
@@ -275,8 +281,8 @@ ALTER TABLE `periodo`
 -- Indices de la tabla `user`
 --
 ALTER TABLE `user`
-  ADD PRIMARY KEY (`idUser`),
-  ADD UNIQUE KEY `usuario` (`usuario`);
+  ADD PRIMARY KEY (`id_usuario`),
+  ADD UNIQUE KEY `email` (`email`);
 
 --
 -- AUTO_INCREMENT de las tablas volcadas
@@ -346,7 +352,7 @@ ALTER TABLE `periodo`
 -- AUTO_INCREMENT de la tabla `user`
 --
 ALTER TABLE `user`
-  MODIFY `idUser` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Restricciones para tablas volcadas
