@@ -141,6 +141,7 @@ body {
     min-height: 100vh;
     background: var(--white);
     transition: 0.5s;
+    animation: fadeIn 2s;
 }
 
 .main.active {
@@ -305,18 +306,28 @@ body {
 
 /* Estudiantes */
 
-.estudent {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box
+.table-header {
+    text-align: left;
 }
 
-.marco {
-    position: ;
-    width: 100px;
-    height: 100%;
-    background: var(--black2);
-    border-left: 10px solid var(--black2);
-    transition: 0.5s;
-    overflow: hidden;
+.table-body {
+    text-align: left;
+}
+
+.table-cell {
+    vertical-align: middle;
+    padding: 0.75rem;
+}
+
+.table-dark {
+    background-color: #8f8181a9;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
