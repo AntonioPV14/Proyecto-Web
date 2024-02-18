@@ -2,115 +2,139 @@
 <?php include '../stages/login.php'; // Ruta Para registrar usuario?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="../css/style_index.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>EduWeb</title>
 </head>
 <body>
- <div class="wrapper">
-    <nav class="nav">
-        <div class="nav-logo">
-            <img src="../img/EduWeb1.jpg" alt="Logo de EduWeb" class="logo-img">
-            <p>EduWeb</p>
-        </div>
-        <div class="nav-menu" id="navMenu">
-            <ul>
-                <li><a href="#" class="link active">Inicio</a></li>
-                <li><a href="#" class="link">Blog</a></li>
-                <li><a href="#" class="link">Servicios</a></li>
-            </ul>
-        </div>
-        <div class="nav-button">
-            <button class="btn white-btn" id="loginBtn" onclick="login()">Iniciar sesión</button>
-            <button class="btn" id="registerBtn" onclick="register()">Registrar</button>
-        </div>
-        <div class="nav-menu-btn">
-            <i class="bx bx-menu" onclick="myMenuFunction()"></i>
-        </div>
-    </nav>
-<!----------------------------- Formularios ----------------------------------->    
-    <div class="form-box">
-        <!------------------- Formulario de Iniciar sesión -------------------------->
-        <div class="login-container" id="login">
+    
+        <div class="wrapper">
+            <nav class="nav">
+                <div class="nav-logo">
+                    <img src="../img/EduWeb1.jpg" alt="Logo de EduWeb" class="logo-img">
+                    <p>EduWeb</p>
+                </div>
+                <div class="nav-menu" id="navMenu">
+                    <ul>
+                        <li><a href="#" class="link active">Inicio</a></li>
+                        <li><a href="#" class="link">Blog</a></li>
+                        <li><a href="#" class="link">Servicios</a></li>
+                    </ul>
+                </div>
+                <div class="nav-button">
+                    <button class="btn white-btn" id="loginBtn" onclick="login()">Iniciar sesión</button>
+                    <button class="btn" id="registerBtn" onclick="register()">Registrar</button>
+                </div>
+                <div class="nav-menu-btn">
+                    <i class="bx bx-menu" onclick="myMenuFunction()"></i>
+                </div>
+            </nav>
+    
+<!----------------------------- Formularios ----------------------------------->
+    
+        <div class="form-box">
+            <!------------------- Formulario de Iniciar sesión -------------------------->
+            <div class="login-container" id="login">
 
-            <form action="" method="post">
-            <div class="top">
-                <span>¿No tienes una cuenta? <a href="#" onclick="register()">Regístrate</a></span>
-                <header>Iniciar sesión</header>
+                <form action="" method="post">
+                <div class="top">
+                    <span>¿No tienes una cuenta? <a href="#" onclick="register()">Regístrate</a></span>
+                    <header>Iniciar sesión</header>
+                </div>
+                <div class="input-box">
+                    <input type="text" class="input-field" name="email_1" placeholder="Usuario o Correo electronico">
+                    <i class="bx bx-user"></i>
+                </div>
+                <div class="input-box">
+                    <input type="password" class="input-field" name = "password_1"placeholder="Contraseña">
+                    <i class="bx bx-lock-alt"></i>
+                </div>
+                
+                <div class="input-box">
+                    <input type="submit"  class="submit" value="Siguiente">
+                </div>
+                </form>
+                <div class="two-col">
+                    <div class="one">
+                        <input type="checkbox" id="login-check">
+                        <label for="login-check"> Recuerdame</label>
+                    </div>
+                    <div class="two">
+                        <label id="Termino"><a href="#">¿Olvido su contraseña?</a></label>
+                    </div>
+                </div>
+            </div>
+
+            <!------------------- Formulario de Registro -------------------------->
+    <div class="register-container" id="register">
+        <?php
+            if (!empty($message)):  ?>
+            <script>
+                alert("<?php echo $message; ?>");
+            </script>
+        <?php endif; ?>
+        <div class="top">
+            <span>¿Tienes una cuenta? <a href="#" onclick="login()">Iniciar sesión</a></span>
+            <header>Regístrate</header>
+        </div>
+        <form action="index.php" method="post">
+            <div class="two-forms">
+                <div class="input-box">
+                    <input type="text" class="input-field" name="nombre" placeholder="Nombre">
+                    <i class="bx bx-user"></i>
+                </div>
+                <div class="input-box">
+                    <input type="text" class="input-field" name="apellido" placeholder="Apellido">
+                    <i class="bx bx-user"></i>
+                </div>
             </div>
             <div class="input-box">
-                <input type="text" class="input-field" name="email_1" placeholder="Usuario o Correo electronico">
-                <i class="bx bx-user"></i>
+                <input type="text" class="input-field" name="email_2" placeholder="Correo">
+                <i class="bx bx-envelope"></i>
             </div>
             <div class="input-box">
-                <input type="password" class="input-field" name = "password_1"placeholder="Contraseña">
+                <input type="password" class="input-field" name="password_2" placeholder="Contraseña">
                 <i class="bx bx-lock-alt"></i>
             </div>
-            
             <div class="input-box">
-                <input type="submit"  class="submit" value="Siguiente">
+                <input type="submit" class="submit" value="Registrar">
             </div>
-            </form>
-            <div class="two-col">
-                <div class="one">
-                    <input type="checkbox" id="login-check">
-                    <label for="login-check"> Recuerdame</label>
-                </div>
-                <div class="two">
-                    <label id="Termino"><a href="#">¿Olvido su contraseña?</a></label>
-                </div>
+        </form>
+        <div class="two-col">
+            <div class="one">
+                <input type="checkbox" id="register-check">
+                <label for="register-check"> Recuérdame</label>
+            </div>
+            <div class="two">
+                <label id="Termino"><a href="#">Términos y condiciones</a></label>
             </div>
         </div>
+        
+    </div>
 
-        <!------------------- Formulario de Registro -------------------------->
-<div class="register-container" id="register">
-    <?php
-        if (!empty($message)):  ?>
-         <script>
-            alert("<?php echo $message; ?>");
-         </script>
-    <?php endif; ?>
-    <div class="top">
-        <span>¿Tienes una cuenta? <a href="#" onclick="login()">Iniciar sesión</a></span>
-        <header>Regístrate</header>
-    </div>
-    <form action="index.php" method="post">
-        <div class="two-forms">
-            <div class="input-box">
-                <input type="text" class="input-field" name="nombre" placeholder="Nombre">
-                <i class="bx bx-user"></i>
-            </div>
-            <div class="input-box">
-                <input type="text" class="input-field" name="apellido" placeholder="Apellido">
-                <i class="bx bx-user"></i>
-            </div>
+<footer>
+        <div class="footer-content">
+            <h3>Síguenos</h3>
+            <p>Nuestra misión es crear una comunidad de aprendizaje.</p>
+            <ul class="socials">
+                <li><a href="https://es-la.facebook.com" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                <li><a href="https://twitter.com/x" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                <li><a href="https://www.google.com/" target="_blank"><i class="fa fa-google-plus"></i></a></li>
+                <li><a href="https://www.youtube.com/" target="_blank"><i class="fa fa-youtube"></i></a></li>
+                <li><a href="https://www.linkedin.com" target="_blank"><i class="fa fa-linkedin-square"></i></a></li>
+            </ul>
         </div>
-        <div class="input-box">
-            <input type="text" class="input-field" name="email_2" placeholder="Correo">
-            <i class="bx bx-envelope"></i>
+        <div class="footer-bottom">
+            <p>&copy; 2024 EduWeb. Todos los derechos reservados.</p>
         </div>
-        <div class="input-box">
-            <input type="password" class="input-field" name="password_2" placeholder="Contraseña">
-            <i class="bx bx-lock-alt"></i>
-        </div>
-        <div class="input-box">
-            <input type="submit" class="submit" value="Registrar">
-        </div>
-    </form>
-    <div class="two-col">
-        <div class="one">
-            <input type="checkbox" id="register-check">
-            <label for="register-check"> Recuérdame</label>
-        </div>
-        <div class="two">
-            <label id="Termino"><a href="#">Términos y condiciones</a></label>
-        </div>
-    </div>
-</div>
+</footer>
+
+
 
 
 <!--js-->   
