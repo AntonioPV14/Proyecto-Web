@@ -15,9 +15,9 @@
         <h1>EduWeb blog</h1>
         <nav>
             <ul>
-                <li><a href="#">Inicio</a></li>
-                <li><a href="#">Servicios</a></li>
-                <li><a href="#">Iniciar Sesión</a></li>
+                <li><a href="../index.php">Inicio</a></li>
+                <li><a href="/servicios.php">Servicios</a></li>
+                <li><a href="../index.php">Iniciar Sesión</a></li>
             </ul>
         </nav>
         <div class="contenido">

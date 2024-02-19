@@ -36,14 +36,9 @@
                     <i class="material-icons">group</i><span>Estudiantes</span></a>
                 <ul class="collapse list-unstyled menu" id="homeSubmenu1">
                     <li>
-                        <a href="../dasboard/estudiantes.php">Home 1</a>
+                        <a href="../dasboard/estudiantes.php">Tabla Estudiantes</a>
                     </li>
-                    <li>
-                        <a href="#">Home 2</a>
-                    </li>
-                    <li>
-                        <a href="#">Home 3</a>
-                    </li>
+
                 </ul>
             </li>
             <li class="dropdown">
@@ -51,14 +46,9 @@
                     <i class="material-icons">work</i><span>Docentes</span></a>
                 <ul class="collapse list-unstyled menu" id="pageSubmenu2">
                     <li>
-                        <a href="#">Page 1</a>
+                        <a href="../dasboard/docentes.php">Tabla Docentes</a>
                     </li>
-                    <li>
-                        <a href="#">Page 2</a>
-                    </li>
-                    <li>
-                        <a href="#">Page 3</a>
-                    </li>
+
                 </ul>
             </li>
 

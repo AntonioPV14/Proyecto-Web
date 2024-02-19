@@ -23,7 +23,7 @@
                 <div class="nav-menu" id="navMenu">
                     <ul>
                         <li><a href="#" class="link active">Inicio</a></li>
-                        <li><a href="#" class="link">Blog</a></li>
+                        <li><a href="./contenido/index.php" class="link">Blog</a></li>
                         <li><a href="#" class="link">Servicios</a></li>
                     </ul>
                 </div>
