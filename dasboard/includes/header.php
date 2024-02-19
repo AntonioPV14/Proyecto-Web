@@ -113,7 +113,7 @@
                                         <a href="#">Perfil</a>
                                     </li>
                                     <li>
-                                        <a href="./../views/index.php">Cerrar Sesión</a>
+                                        <a href="./../stages/logout.php">Cerrar Sesión</a>
                                     </li>
                                 </ul>
 
