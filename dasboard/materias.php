@@ -2,9 +2,9 @@
 <?php include 'includes/modals/modals.php'; ?>  
 
 <!-- Contenido de la página principal -->
-<h1>Docentes</h1>
+<h1>Materias</h1>
 <div class="content">
-    <button class="btn btn-success" type="button" onclick="openModal()">Nuevo Docente</button>
+    <button class="btn btn-success" type="button" onclick="openModal()">Nueva Materia</button>
     <!--Custom js-->
     <script src="js/main.js"></script>
 

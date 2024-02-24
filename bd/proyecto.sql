@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 04-02-2024 a las 17:15:22
+-- Tiempo de generación: 19-02-2024 a las 12:44:19
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -35,6 +35,14 @@ CREATE TABLE `alumnos` (
   `telefono` varchar(15) NOT NULL,
   `ultimaModificacion` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `alumnos`
+--
+
+INSERT INTO `alumnos` (`idAlumno`, `nombre`, `apellido`, `fechaNacimiento`, `telefono`, `ultimaModificacion`) VALUES
+(1, 'antonio', 'perozo', '2014-02-12', '123456789', NULL),
+(2, 'antonio', 'perozo', '2002-06-14', '1234567891', '2024-02-17 23:23:04');
 
 --
 -- Disparadores `alumnos`
@@ -90,6 +98,19 @@ CREATE TABLE `dias` (
   `idDia` int(11) NOT NULL,
   `nombreDia` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `dias`
+--
+
+INSERT INTO `dias` (`idDia`, `nombreDia`) VALUES
+(1, 'Lunes'),
+(2, 'Martes'),
+(3, 'Miercoles'),
+(4, 'Jueves'),
+(5, 'Viernes'),
+(6, 'Sabado'),
+(7, 'Domingo');
 
 -- --------------------------------------------------------
 
@@ -172,6 +193,14 @@ CREATE TABLE `materia` (
   `nombre` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Volcado de datos para la tabla `materia`
+--
+
+INSERT INTO `materia` (`idMateria`, `nombre`) VALUES
+(1, 'Matematicas'),
+(2, 'Ingles');
+
 -- --------------------------------------------------------
 
 --
@@ -184,6 +213,13 @@ CREATE TABLE `periodo` (
   `fechaInicio` datetime NOT NULL,
   `fechaFin` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `periodo`
+--
+
+INSERT INTO `periodo` (`idPeriodo`, `nombre`, `fechaInicio`, `fechaFin`) VALUES
+(1, 'Primer Lapso', '2024-02-01 19:23:55', '2024-02-29 19:23:55');
 
 -- --------------------------------------------------------
 
@@ -204,7 +240,9 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id_usuario`, `nombre`, `apellido`, `email`, `password`) VALUES
-(1, 'antonio', 'perozo', 'antonioperozo.v2017@gmail.com', '$2y$10$ekj4gZcT6R4FrPhwcCQiguw0iVQ3XbSqcgF.VyPa419YqcgUFmNmq');
+(1, 'antonio', 'perozo', 'antonioperozo.v2017@gmail.com', '$2y$10$ekj4gZcT6R4FrPhwcCQiguw0iVQ3XbSqcgF.VyPa419YqcgUFmNmq'),
+(2, 'antonio', 'perozo', 'antonioperozo.v2018@gmail.com', '$2y$10$nu3v7tuqkwq.TA98gt34f.t0c4YUO9.qRe0tZFHmrwTBX6/r6DeUG'),
+(3, 'antonio', 'perozo', 'antonioperozo.v2017@outlook.es', '$2y$10$j7e3ErZjmUdukVvfuEYZ4en91O7nRauzPo9j1G0eSNRHWk6Kn6Qj2');
 
 --
 -- Índices para tablas volcadas
@@ -292,13 +330,13 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT de la tabla `alumnos`
 --
 ALTER TABLE `alumnos`
-  MODIFY `idAlumno` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idAlumno` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `alumno_materia`
 --
 ALTER TABLE `alumno_materia`
-  MODIFY `idALMT` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idALMT` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `clase`
@@ -310,7 +348,7 @@ ALTER TABLE `clase`
 -- AUTO_INCREMENT de la tabla `dias`
 --
 ALTER TABLE `dias`
-  MODIFY `idDia` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idDia` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT de la tabla `docentes`
@@ -340,19 +378,19 @@ ALTER TABLE `horario`
 -- AUTO_INCREMENT de la tabla `materia`
 --
 ALTER TABLE `materia`
-  MODIFY `idMateria` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idMateria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `periodo`
 --
 ALTER TABLE `periodo`
-  MODIFY `idPeriodo` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idPeriodo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `user`
 --
 ALTER TABLE `user`
-  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- Restricciones para tablas volcadas

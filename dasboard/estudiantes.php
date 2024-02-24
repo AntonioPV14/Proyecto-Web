@@ -4,144 +4,35 @@
 <!-- Contenido de la página principal -->
 <h1>Estudiantes</h1>
 <div class="content">
-<button class="btn btn-success" type="button" onclick="openModal()">Nuevo Estudiante</button>
-<table id="example" class="table table-striped table-bordered" style="width:100%">
-        <thead>
-            <tr>
-                <th>Nombre</th>
-                <th>edad</th>
-                <th>Dirección</th>
-                <th>Cedula</th>
-                <th>Telefono</th>
-                <th>Correo</th>
-            </tr>
-        </thead>
-        <tbody>
-        <tr>
-                <td>Nixon</td>
-                <td>10</td>
-                <td>Maracaibo</td>
-                <td>V-123456</td>
-                <td>123456</td>
-                <td>N@gmail.com</td>
-            </tr>
-            <tr>
-                <td>Nixon</td>
-                <td>10</td>
-                <td>Maracaibo</td>
-                <td>V-123456</td>
-                <td>123456</td>
-                <td>N@gmail.com</td>
-            </tr>
-            <tr>
-                <td>Nixon</td>
-                <td>10</td>
-                <td>Maracaibo</td>
-                <td>V-123456</td>
-                <td>123456</td>
-                <td>N@gmail.com</td>
-            </tr>
-            <tr>
-                <td>Nixon</td>
-                <td>10</td>
-                <td>Maracaibo</td>
-                <td>V-123456</td>
-                <td>123456</td>
-                <td>N@gmail.com</td>
-            </tr>
-            <tr>
-                <td>Nixon</td>
-                <td>10</td>
-                <td>Maracaibo</td>
-                <td>V-123456</td>
-                <td>123456</td>
-                <td>N@gmail.com</td>
-            </tr>
-            <tr>
-                <td>Nixon</td>
-                <td>10</td>
-                <td>Maracaibo</td>
-                <td>V-123456</td>
-                <td>123456</td>
-                <td>N@gmail.com</td>
-            </tr>
-            <tr>
-                <td>Nixon</td>
-                <td>10</td>
-                <td>Maracaibo</td>
-                <td>V-123456</td>
-                <td>123456</td>
-                <td>N@gmail.com</td>
-            </tr>
-            <tr>
-                <td>Nixon</td>
-                <td>10</td>
-                <td>Maracaibo</td>
-                <td>V-123456</td>
-                <td>123456</td>
-                <td>N@gmail.com</td>
-            </tr>
-            <tr>
-                <td>Nixon</td>
-                <td>10</td>
-                <td>Maracaibo</td>
-                <td>V-123456</td>
-                <td>123456</td>
-                <td>N@gmail.com</td>
-            </tr>
-            <tr>
-                <td>Nixon</td>
-                <td>10</td>
-                <td>Maracaibo</td>
-                <td>V-123456</td>
-                <td>123456</td>
-                <td>N@gmail.com</td>
-            </tr>
-            <tr>
-                <td>Nixon</td>
-                <td>10</td>
-                <td>Maracaibo</td>
-                <td>V-123456</td>
-                <td>123456</td>
-                <td>N@gmail.com</td>
-            </tr>
-            <tr>
-                <td>Nixon</td>
-                <td>10</td>
-                <td>Maracaibo</td>
-                <td>V-123456</td>
-                <td>123456</td>
-                <td>N@gmail.com</td>
-            </tr>
-            <tr>
-                <td>Nixon</td>
-                <td>10</td>
-                <td>Maracaibo</td>
-                <td>V-123456</td>
-                <td>123456</td>
-                <td>N@gmail.com</td>
-            </tr>
-            <tr>
-                <td>Nixon</td>
-                <td>10</td>
-                <td>Maracaibo</td>
-                <td>V-123456</td>
-                <td>123456</td>
-                <td>N@gmail.com</td>
-            </tr>
-            
-        </tbody>
-        <tfoot>
-            <tr>
-                <th>Nombre</th>
-                <th>Edad</th>
-                <th>Dirección</th>
-                <th>Cedula</th>
-                <th>Telefono</th>
-                <th>Correo</th>
-            </tr>
-        </tfoot>
-    </table>
+    <button class="btn btn-success" type="button" onclick="openModal()">Nuevo Estudiante</button>
+    <!--Custom js-->
+    <script src="js/main.js"></script>
+
+    <div class="container my-4">
+            <div class="row">
+                <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                    <table id="datatable_users" class="table table-striped">
+                        <caption>
+                            Tabla de Estudiantes.
+                        </caption>
+                        <thead>
+                            <tr>
+                                <th class="centered">#</th>
+                                <th class="centered">Name</th>
+                                <th class="centered">Email</th>
+                                <th class="centered">City</th>
+                                <th class="centered">Company</th>
+                                <th class="centered">Status</th>
+                                <th class="centered">Options</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tableBody_users"></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </div>
 </div>
 
 <?php include 'includes/footer.php'; ?>

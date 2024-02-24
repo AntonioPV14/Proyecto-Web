@@ -15,8 +15,19 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
     <link href='https://unpkg.com/css.gg@2.0.0/icons/css/file-document.css' rel='stylesheet'>
-    <link href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css' rel='stylesheet'>
-    <link href='https://cdn.datatables.net/2.0.0/css/dataTables.bootstrap4.css' rel='stylesheet'>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous" />
+        <!-- DataTable -->
+        <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap5.min.css" />
+        <!-- Font Awesome -->
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+            integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
+    
 </head>
 <body>
 <div class="wrapper">
@@ -28,7 +39,7 @@
         </div>
         <ul class="list-unstyled components">
             <li class="active">
-                <a href="#" class="dashboard"><i class="material-icons">home</i><span>Inicio</span></a>
+                <a href="../dasboard/index.php" class="dashboard"><i class="material-icons">home</i><span>Inicio</span></a>
             </li>
 
             <li class="dropdown">
@@ -54,16 +65,16 @@
 
           
             <li class="">
-                <a href="#"><i class="material-icons">analytics</i><span>Materias</span></a>
+                <a href="../dasboard/materias.php"><i class="material-icons">analytics</i><span>Materias</span></a>
             </li>
             <li class="">
-                <a href="#"><i class="material-icons">analytics</i><span>Grados</span></a>
+                <a href="../dasboard/grados.php"><i class="material-icons">analytics</i><span>Grados</span></a>
             </li>
             <li class="">
-                <a href="#"><i class="material-icons">analytics</i><span>Periodos</span></a>
+                <a href="../dasboard/periodo.php"><i class="material-icons">analytics</i><span>Periodos</span></a>
             </li>
             <li class="">
-                <a href="#"><i class="material-icons">analytics</i><span>Aulas</span></a>
+                <a href="../dasboard/aulas.php"><i class="material-icons">analytics</i><span>Aulas</span></a>
             </li>
             <li class="">
                 <a href="#"><i class="material-icons">analytics</i><span>Procesar Grados</span></a>
