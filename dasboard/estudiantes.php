@@ -10,8 +10,20 @@
 <h1>Estudiantes</h1>
 <div class="content">
     <button id="btnNewStudent" type="button" onclick="openModal()"><i class="fas fa-user-plus"></i> Nuevo Estudiante</button>
-
     <button id="btnExportPDF"><i class="bi bi-file-earmark-pdf-fill"></i> Exportar a PDF</button>
+
+    <script>
+    document.getElementById('btnExportPDF').addEventListener('click', function() {
+        exportarPDF();
+    });
+
+    function exportarPDF() {
+        const doc = new jsPDF();
+        doc.autoTable({ html: '#datatable_users' });
+        doc.save('tabla_estudiantes.pdf');
+    }
+    </script>
+
     <button id="btnExportExcel"><i class="bi bi-file-excel"></i> Exportar a Excel</button>
     <button id="btnPrint"><i class="bi bi-printer"></i></button>
 
@@ -48,5 +60,8 @@
 
 <!--Custom js-->
 <script src="js/main.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+
 
 <?php include 'includes/footer.php'; ?>

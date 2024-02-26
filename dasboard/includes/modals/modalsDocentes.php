@@ -1,5 +1,5 @@
 
-<div class="modal fade" id="modalEstudiante" tabindex="-1" role="dialog" aria-hidden="true">
+<div class="modal fade" id="modalDocentes" tabindex="-1" role="dialog" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
     <div class="modal-content">
       <div class="modal-header">
@@ -33,18 +33,18 @@
             <input type="text" class="form-control" id="correo" name="correo">
           </div>
           <div class="form-group">
-            <label for="listEstado" class="form-label">Nivel de Estado</label>
+            <label for="listEstado" class="form-label">Nivel de Estado:</label>
             <select class="form-control" id="listEstado" name="listEstado"> 
-                <option value="1">Excelente</option>
-                <option value="1">Medio</option>
-                <option value="1">Bajo</option>
+                <option value="1">Licenciatura</option>
+                <option value="1">Maestría</option>
+                <option value="1">Doctorado</option>
             </select>
           </div>
           <div class="form-group">
             <label for="listEstado" class="form-label">Estado</label>
             <select class="form-control" id="listEstado" name="listEstado"> 
                 <option value="1">Activo</option>
-                <option value="1">Inactivo</option>
+                <option value="0">Inactivo</option>
             </select>
           </div>
             <div class="modal-footer">
