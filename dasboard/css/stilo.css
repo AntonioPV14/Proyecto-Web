@@ -1,0 +1,82 @@
+/* Estilos para botones de exportar a PDF y Excel */
+
+#btnExportPDF {
+    background-color: #E74C3C;
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding: 10px 20px;
+    margin-right: 20px;
+    margin-left: 20px;
+    outline: none;
+    font-size: 16px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s;
+}
+
+#btnExportExcel {
+    background-color: #27AE60;
+    border: none;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    padding: 10px 20px;
+    margin-right: 10px;
+    outline: none;
+    font-size: 16px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s;
+}
+
+#btnPrint {
+    background-color: #566573;
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding: 10px 20px;
+    margin-left: 10px;
+    outline: none;
+    font-size: 16px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s;
+}
+
+#btnExportPDF i,
+#btnPrint i {
+    color: white;
+}
+
+#btnExportExcel i {
+    color: #ffffff;
+}
+
+#btnExportPDF:hover,
+#btnExportExcel:hover,
+#btnPrint:hover {
+    transform: scale(1.1);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+#btnNewStudent {
+    background-color: #3498DB;
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding: 10px 20px;
+    outline: none;
+    font-size: 16px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s;
+}
+
+#btnNewStudent:hover {
+    transform: scale(1.1);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+#administracion {
+    color: white;
+}
+
+#administracion:hover {
+    color: #000000;
+}

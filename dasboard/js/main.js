@@ -51,10 +51,10 @@ const listUsers = async() => {
             content += `
                 <tr>
                     <td>${index + 1}</td>
-                    <td>${user.name}</td>
-                    <td>${user.email}</td>
-                    <td>${user.address.city}</td>
-                    <td>${user.company.name}</td>
+                    <td>${user.Nombre}</td>
+                    <td>${user.Edad}</td>
+                    <td>${user.Dirección}</td>
+                    <td>${user.Cédula8}</td>
                     <td><i class="fa-solid fa-check" style="color: green;"></i></td>
                     <td>
                         <button class="btn btn-sm btn-primary"><i class="fa-solid fa-pencil"></i></button>

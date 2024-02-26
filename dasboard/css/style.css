@@ -21,6 +21,14 @@ a:hover {
     text-decoration: none;
 }
 
+#administracion {
+    color: white;
+}
+
+#administracion:hover {
+    color: #000000;
+}
+
 
 /*-----------------------------
 	News Ticker

@@ -674,6 +674,14 @@ footer .copyright {
     }
 }
 
+#administracion {
+    color: white;
+}
+
+#administracion:hover {
+    color: #000000;
+}
+
 
 /*===============small-screen overlay sidebar design media queries==============*/
 
