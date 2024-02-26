@@ -6,7 +6,7 @@ try {
     $stmt = $conn->prepare("SELECT * FROM alumnos");
 
     // Ejecuta la consulta
-    $stmt->execute();f
+    $stmt->execute();
 
     // Obtiene los resultados
     $alumnos = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -17,3 +17,5 @@ try {
     echo "Error: " . $e->getMessage();
 }
 ?>
+
+

@@ -4,9 +4,9 @@ let dataTableIsInitialized = false;
 const dataTableOptions = {
     lengthMenu: [5, 10, 15, 20, 100, 200, 500],
     columnDefs: [
-        { className: "centered", targets: [0, 1, 2, 3, 4, 5, 6] },
-        { orderable: false, targets: [5, 6] },
-        { searchable: true, targets: [1, 2, 3, 4, 5, 6] } // Habilita la búsqueda en todas las columnas excepto la primera
+        { className: "centered", targets: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9] },
+        { orderable: false, targets: [9] }, // Deshabilita la ordenación para la columna de botones
+        { searchable: true, targets: [1, 2, 3, 4, 5, 6, 7, 8] } // Habilita la búsqueda en todas las columnas excepto la primera
     ],
     pageLength: 10, // Número predeterminado de registros por página
     destroy: true,
@@ -26,6 +26,8 @@ const dataTableOptions = {
         }
     }
 };
+
+
 
 const initDataTable = async() => {
     if (dataTableIsInitialized) {
@@ -59,17 +61,27 @@ const listUsers = async() => {
                     <td>${alumno.fecha_registro}</td>
                     <td>${alumno.estado}</td>
                     <td>
-                    <button class="btn btn-sm btn-primary"><i class="fa-solid fa-pencil"></i></button>
-                    <button class="btn btn-sm btn-danger"><i class="fa-solid fa-trash-can"></i></button>
+                        <button class="btn btn-sm btn-primary"><i class="fa-solid fa-pencil"></i></button>
+                        <button class="btn btn-sm btn-danger"><i class="fa-solid fa-trash-can"></i></button>
                     </td>
-
                 </tr>`;
         });
-        tableBody_users.innerHTML = content;
+        $("#datatable_users tbody").html(content); // Modificar el contenido de tbody
+
+        // Volver a inicializar DataTables después de cambiar el contenido
+        if (dataTableIsInitialized) {
+            dataTable.destroy();
+        }
+
+        dataTable = $("#datatable_users").DataTable(dataTableOptions);
+
+        dataTableIsInitialized = true;
     } catch (ex) {
         alert(ex);
     }
 };
+
+
 
 window.addEventListener("load", async() => {
     await initDataTable();

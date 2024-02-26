@@ -79,6 +79,11 @@ body {
     background-color: #fff
 }
 
+.container.my-4 {
+    max-width: 100%;
+    overflow-x: auto;
+}
+
 [tabindex="-1"]:focus {
     outline: 0!important
 }
@@ -580,7 +585,7 @@ pre code {
 }
 
 .container {
-    width: 100%;
+    width: auto;
     padding-right: 15px;
     padding-left: 15px;
     margin-right: auto;
@@ -9278,6 +9283,18 @@ a.text-dark:hover {
     }
     .container {
         min-width: 992px!important
+    }
+    #content {
+        padding: 20px;
+        /* Ajusta el espaciado alrededor del contenido */
+    }
+    .container.my-4 {
+        overflow-x: auto;
+        /* Permite el desplazamiento horizontal si la tabla es demasiado ancha */
+    }
+    #datatable_users {
+        width: 100%;
+        /* Hace que la tabla ocupe el ancho completo del contenedor */
     }
     .navbar {
         display: none

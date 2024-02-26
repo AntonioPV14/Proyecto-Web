@@ -76,6 +76,11 @@ a:focus {
     src: local('Material Icons'), local('MaterialIcons-Regular'), url(https://example.com/MaterialIcons-Regular.woff2) format('woff2'), url(https://example.com/MaterialIcons-Regular.woff) format('woff'), url(https://example.com/MaterialIcons-Regular.ttf) format('truetype');
 }
 
+.container.my-4 {
+    max-width: 100%;
+    overflow-x: auto;
+}
+
 .material-icons {
     font-family: 'Material Icons';
     font-weight: normal;
@@ -236,6 +241,21 @@ a:focus {
     position: relative;
     transition: all 0.3s;
     background-color: #EEEEEE;
+}
+
+#content {
+    padding: 20px;
+    /* Ajusta el espaciado alrededor del contenido */
+}
+
+.container.my-4 {
+    overflow-x: auto;
+    /* Permite el desplazamiento horizontal si la tabla es demasiado ancha */
+}
+
+#datatable_users {
+    width: 100%;
+    /* Hace que la tabla ocupe el ancho completo del contenedor */
 }
 
 .top-navbar {
