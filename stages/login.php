@@ -1,10 +1,8 @@
 <?php
-// Incluye el archivo de conexión a la base de datos
-include '../stages/db.php';
-
 // Inicia la sesión
 session_start();
-
+// Incluye el archivo de conexión a la base de datos
+include '../stages/db.php';
 
 // Verifica si ya hay una sesión activa
 if (isset($_SESSION['user_id']) && $_SERVER['PHP_SELF'] != '../stages/logout.php') {
